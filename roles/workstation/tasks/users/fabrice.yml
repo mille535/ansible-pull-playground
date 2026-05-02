@@ -1,0 +1,72 @@
+- name: users | fabrice | remove preinstalled clutter from home directory
+  file:
+    path: /home/fabrice/{{ item }}
+    state: absent
+  with_items:
+    - examples.desktop
+    - Desktop
+    - Documents
+    - Downloads
+    - Music
+    - Pictures
+    - Public
+    - Templates
+    - Videos
+
+- name: users | fabrice | create personal config directories
+  tags: dotfiles,dotfiles-fabrice
+  file:
+    path: /home/fabrice/{{ item.dir }}
+    state: directory
+    owner: fabrice
+    group: fabrice
+    mode: 0700
+  with_items:
+    - { dir: .config }
+    - { dir: .config/autostart }
+    - { dir: .config/bpytop }
+    - { dir: .config/gtk-3.0 }
+    - { dir: .config/terminator }
+    - { dir: .local }
+    - { dir: .local/share }
+    - { dir: .local/share/applications }
+    - { dir: bin }
+    - { dir: desktop }
+    - { dir: documents }
+    - { dir: downloads }
+    - { dir: projects }
+    - { dir: templates }
+
+- name: users | fabrice | copy user-dirs.dirs
+  tags: dotfiles,dotfiles-fabrice
+  copy:
+    src: users/fabrice/user-dirs.dirs
+    dest: /home/fabrice/.config/user-dirs.dirs
+    owner: fabrice
+    group: fabrice
+    mode: 0600
+  notify: update_xdg
+
+- name: users | fabrice | copy personal config files
+  tags: dotfiles,dotfiles-fabrice
+  copy:
+    src: users/fabrice/{{ item.src }}
+    dest: /home/fabrice/{{ item.dest }}
+    owner: fabrice
+    group: fabrice
+    mode: 0600
+  with_items:
+    - { src: 'bpytop.conf', dest: '.config/bpytop/bpytop.conf' }
+    - { src: 'directory_bookmarks', dest: '.config/gtk-3.0/bookmarks' }
+    - { src: 'gvimrc', dest: '.gvimrc' }
+    - { src: 'ssh_client_config', dest: '.ssh/config' }
+    - { src: 'terminator_config', dest: '.config/terminator/config' }
+
+- name: users | fabrice | copy profile image
+  tags: dotfiles,dotfiles-fabrice
+  copy:
+    src: users/fabrice/profile_image.png
+    dest: /var/lib/AccountsService/icons/fabrice.png
+    owner: root
+    group: root
+    mode: 0644
