@@ -1,7 +1,6 @@
 - hosts: localhost
   connection: local
   become: true
-  become_method: sudo
 
   pre_tasks:
     - name: pre-run | update package cache (arch btw)
