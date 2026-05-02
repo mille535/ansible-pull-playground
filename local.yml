@@ -1,0 +1,11 @@
+- hosts: localhost
+  connection: local
+  become: true
+
+  pre_tasks:
+    - name: pre-run | update package cache (arch btw)
+      pacman: update_cache=yes
+      changed_when: False
+
+  tasks:
+    - include: tasks/packages.yml

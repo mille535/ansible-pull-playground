@@ -1,0 +1,8 @@
+- name: Install packages
+  pacman:
+    name:
+      - btop
+      - mc
+      - nvim
+      - git
+      - tmux
