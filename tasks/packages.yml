@@ -2,7 +2,11 @@
   pacman:
     name:
       - btop
-      - mc
+      #- sudo
+      #- yazi
+      #- fzf
+      #- 7zip
+      #- ffmpeg
       - nvim
       - git
       - tmux
