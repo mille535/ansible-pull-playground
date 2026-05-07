@@ -1,6 +1,13 @@
+- name: set home path in crontab (ansible-pull)
+  cron:
+    user: ansible
+    name: "HOME"
+    env: yes
+    job: "/home/ansible"
+    
 - name: install cron job (andible-pull)
   cron:
     user: ansible
     name: "ansible provision"
     minute: "*/10"
-    job: "HOME=/home/ansible /usr/bin/ansible-pull -o -U https://github.com/mille535/ansible-pull-playground.git -d /home/ansible/.ansible/pull > /dev/null"
+    job: "/usr/bin/ansible-pull -U https://github.com/mille535/ansible-pull-playground.git > /dev/null"
