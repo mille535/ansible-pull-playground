@@ -3,4 +3,4 @@
     user: ansible
     name: "ansible provision"
     minute: "*/10"
-    job: "/usr/bin/ansible-pull -o -U https://github.com/mille535/ansible-pull-playground.git 2>&1 | /bin/curl -d @- ntfy.sh/ansibletest"
+    job: "/usr/bin/ansible-pull -o -U https://github.com/mille535/ansible-pull-playground.git && /bin/curl -fsS -m 10 --retry 5 -o /dev/null https://hc-ping.com/d353fa36-ecab-423d-a1e8-ccf43e036942"
