@@ -1,9 +1,9 @@
-- name: set home path in crontab (ansible-pull)
-  cron:
-    user: ansible
-    name: "HOME"
-    env: yes
-    job: /home/ansible
+#- name: set home path in crontab (ansible-pull)
+#  cron:
+#    user: ansible
+#    name: "HOME"
+#    env: yes
+#    job: /home/ansible
     
 - name: install cron job (andible-pull)
   cron:
