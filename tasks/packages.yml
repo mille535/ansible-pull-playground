@@ -2,9 +2,9 @@
   pacman:
     name:
       - btop
-      #- sudo
+      - sudo
       #- yazi
-      #- fzf
+      - fzf
       #- 7zip
       #- ffmpeg
       #- lazygit
