@@ -4,11 +4,12 @@
       - btop
       - sudo
       #- yazi
-      - fzf
+      #- fzf
       #- 7zip
       #- ffmpeg
       #- lazygit
       #- lazydocker
+      #- ghostty
       - nvim
       - git
       - tmux

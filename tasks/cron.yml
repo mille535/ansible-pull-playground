@@ -3,7 +3,7 @@
     user: ansible
     name: "HOME"
     env: yes
-    job: "/home/ansible"
+    job: /home/ansible
     
 - name: install cron job (andible-pull)
   cron:
