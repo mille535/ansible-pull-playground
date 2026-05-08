@@ -3,7 +3,7 @@
     name:
       - btop
       - sudo
-      #- yazi
+      - yazi
       #- fzf
       #- 7zip
       #- ffmpeg
