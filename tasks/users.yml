@@ -17,3 +17,47 @@
     owner: ansible
     group: ansible
     mode: 0644
+
+- name: "Create group: sudo"
+  group:
+    name: sudo
+    state: present
+
+- name: "Create group: Kirk"
+  group:
+    name: kirk
+    state: present
+
+- name: "Create user: Kirk"
+  user:
+    name: kirk
+    group: kirk
+    groups: sudo
+    state: present
+    comment: "Kirk Miller"
+    password: "dontputrealpasswordsongithub420"
+    shell: /bin/zsh
+
+- name: copy sudoers_kirk
+  copy:
+    src: files/sudoers_kirk
+    dest: /etc/sudoers.d/kirk
+    owner: root
+    group: root
+    mode: 0440
+
+- name: create nvim config dir
+  file:
+    path: /home/kirk/{{ item.dir }}
+    state: directory
+    owner: kirk
+    group: kirk
+    mode: 0700
+  with_items:
+    - { dir: '.config/nvim' }
+    - { dir: '.zsh' }
+
+- name: pull in kickstart.nvim for Kirk
+  git:
+    repo: https://github.com/mille535/kickstart.nvim.git
+    dest: /home/kirk/.config/nvim
