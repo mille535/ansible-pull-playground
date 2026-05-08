@@ -10,4 +10,4 @@
     user: ansible
     name: "ansible provision"
     minute: "*/10"
-    job: "/usr/bin/ansible-pull -U https://github.com/mille535/ansible-pull-playground.git > /dev/null"
+    job: "/usr/bin/ansible-pull -U https://github.com/mille535/ansible-pull-playground.git 2>&1 | /bin/curl -d @- ntfy.sh/ansibletest"
