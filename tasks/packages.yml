@@ -3,7 +3,7 @@
     name:
       - btop
       - sudo
-      - yazi
+      #- yazi
       - fzf
       #- 7zip
       #- ffmpeg
@@ -14,3 +14,5 @@
       - nvim
       - git
       - tmux
+      - tree-sitter-cli #kickstart.nvim dep
+      - base-devel
