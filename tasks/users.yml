@@ -74,4 +74,6 @@
   become: true
   become_user: kirk
   script:
+    chdir: /home/kirk
     cmd: /home/kirk/install.sh --unattended
+    creates: /home/kirk/.oh-my-zsh
