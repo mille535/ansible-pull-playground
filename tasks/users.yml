@@ -67,7 +67,7 @@
 - name: donwload oh my zsh
   get_url:
     url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-    dest: /home/kik/install.sh
+    dest: /home/kirk/install.sh
     mode: 0755
 
 - name: install ohmyzsh
