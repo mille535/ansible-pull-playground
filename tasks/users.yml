@@ -22,6 +22,7 @@
   group:
     name: sudo
     state: present
+    system: yes
 
 - name: "Create group: Kirk"
   group:
