@@ -16,3 +16,4 @@
       - tmux
       - tree-sitter-cli #kickstart.nvim dep
       - base-devel
+      - ttf-firacode-nerd

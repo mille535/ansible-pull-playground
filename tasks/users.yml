@@ -63,3 +63,15 @@
   git:
     repo: https://github.com/mille535/kickstart.nvim.git
     dest: /home/kirk/.config/nvim
+
+- name: donwload oh my zsh
+  get_url:
+    url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+    dest: /tmp/install.sh
+    mode: 0755
+
+- name: install ohmyzsh
+  become: true
+  become_user: kirk
+  script:
+    cmd: /tmp/install.sh --unattended
