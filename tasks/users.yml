@@ -52,7 +52,7 @@
     state: directory
     owner: kirk
     group: kirk
-    mode: 0700
+    mode: 0755
   with_items:
     - { dir: '.config/nvim' }
     - { dir: '.zsh' }
