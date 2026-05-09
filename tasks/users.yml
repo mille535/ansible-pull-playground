@@ -58,6 +58,8 @@
     - { dir: '.zsh' }
 
 - name: pull in kickstart.nvim for Kirk
+  become: true
+  become_user: kirk
   git:
     repo: https://github.com/mille535/kickstart.nvim.git
     dest: /home/kirk/.config/nvim
