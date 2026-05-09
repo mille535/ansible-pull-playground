@@ -35,7 +35,7 @@
     groups: sudo
     state: present
     comment: "Kirk Miller"
-    password: "dontputrealpasswordsongithub420"
+    password: "$6$FLh7YLSu2g/iD1M3$IT0/X.v6e/ryoqrO2yktbZAMH9l0H77uHdlkxjRMHd1K5uG/Bgj/sGwJVd2sxn12v55OZl7Cwnv9e60cKZD3y0"
     shell: /bin/zsh
 
 - name: copy sudoers_kirk
